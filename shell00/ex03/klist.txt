@@ -1,0 +1,5 @@
+Credentials cache: API:67A1E9BC-70A6-4950-A94A-998A5D1DE28C
+        Principal: rtosun@42KOCAELI.COM.TR
+
+  Issued                Expires               Principal
+Nov 24 11:26:40 2021  Nov 24 21:26:40 2021  krbtgt/42KOCAELI.COM.TR@42KOCAELI.COM.TR

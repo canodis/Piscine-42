@@ -1,0 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rtosun <rtosun@student.42kocaeli.com.tr>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/04 12:10:58 by rtosun            #+#    #+#             */
+/*   Updated: 2021/12/04 15:17:11 by rtosun           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char	*ft_strstr(char *str, char *to_find)
+{
+	int	i;
+	int	tmp;
+
+	if (*to_find == '\0')
+		return (str);
+	while (*str != '\0')
+	{
+		if (*str == *to_find)
+		{
+			i = 0;
+			tmp = 0;
+			while (to_find[i] != '\0')
+			{
+				if (str[i] != to_find[i])
+					tmp = 1;
+				i++;
+			}
+			if (tmp == 0)
+				return (str);
+		}
+		str++;
+	}
+	return (0);
+}
