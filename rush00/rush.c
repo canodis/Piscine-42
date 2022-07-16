@@ -11,35 +11,26 @@
 /* ************************************************************************** */
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	rush(int last_x, int last_y)
 {
-	write(1, &c, 1);
-}
+	int	x;
+	int	y;
 
-void	rush(int x, int y)
-{
-	int alfa;
-	int delta;
-
-	if (x < 1 || y < 1)
-		return ;
-	delta = 1;
-	while (delta <= y)
+	y = -1;
+	while (++y < last_y)
 	{
-		alfa = 1;
-		while (alfa <= x)
+		x = -1;
+		while (++x < last_x)
 		{
-			if ((alfa > 1 && alfa < x) && (delta > 1 && delta < y))
-				ft_putchar(' ');
-			else if ((alfa > 1 && alfa < x) && (delta == 1 || delta == y))
-				ft_putchar('-');
-			else if ((delta > 1 && delta < y) && (alfa == 1 || alfa == x))
-				ft_putchar('|');
+			if ((y == 0 || y == last_y - 1) && (x == 0 || x == last_x - 1))
+				write(1, "o", 1);
+			else if (x == 0 || x == last_x - 1)
+				write(1, "|", 1);
+			else if ((y == 0 || y == last_y - 1))
+				write(1, "-", 1);
 			else
-				ft_putchar('o');
-			alfa++;
+				write (1, " ", 1);
 		}
-		ft_putchar('\n');
-		delta++;
+		write (1, "\n", 1);
 	}
 }
